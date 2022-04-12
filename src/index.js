@@ -1,5 +1,6 @@
 
 import { hello } from  './js/componente.js'
+import './styles.css';
 const name= "Geri";
 hello(name);
 

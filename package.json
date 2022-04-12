@@ -5,12 +5,24 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "build": "webpack --config webpack.prod.js",
+    "build:dev": "webpack --config webpack.config.js",
+    "serve": "webpack serve --config webpack.config.js --open --port=8085"
   },
   "author": "Geraldine",
   "license": "MIT",
   "devDependencies": {
+    "copy-webpack-plugin": "^10.2.4",
+    "css-loader": "^5.2.4",
+    "css-minimizer-webpack-plugin": "^3.4.1",
+    "file-loader": "^6.2.0",
+    "html-loader": "^2.1.2",
+    "html-webpack-plugin": "^5.3.1",
+    "mini-css-extract-plugin": "^2.6.0",
+    "style-loader": "^2.0.0",
+    "terser-webpack-plugin": "^5.3.1",
     "webpack": "^5.36.2",
-    "webpack-cli": "^4.9.2"
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^3.11.2"
   }
 }

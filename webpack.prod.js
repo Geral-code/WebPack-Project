@@ -2,8 +2,12 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
+//minificar css en produccion
+const CssMinimizer = require('css-minimizer-webpack-plugin');
+const Terser = require('terser-webpack-plugin');
+
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     output: {
         clean: true
     },
@@ -37,6 +41,14 @@ module.exports = {
 
     },
     optimization: {
+        // Esta seccion se utiliza cuando vamos a generar la compilacion a produccion
+        minimize: true,
+        minimizer: [
+            new CssMinimizer(),
+            new Terser(),
+            
+        ]
+
 
     },
     plugins: [
